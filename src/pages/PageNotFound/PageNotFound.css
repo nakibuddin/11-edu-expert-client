@@ -1,0 +1,52 @@
+.page-not-found {
+    text-align: center;
+    max-width: 30%;    
+    margin: auto;
+    margin-top: 5%;
+    border: 1px solid  #cfd0e6;
+    
+    border-radius: 10px;    
+    box-shadow: 5px 5px 5px rgb(235, 233, 233);
+    padding: 30px;    
+
+    /* position: absolute;
+    top: 25%;
+    left: 36%; */
+
+}
+
+.page-not-found button {    
+    margin: 15px 10% 25px 10%;
+    padding: 10px 25px 10px 25px;
+    border-radius: 10px;
+    
+    font-size: 17px;
+    background-color: #5D5FEF;
+    color: white;
+    border: none;
+    cursor: pointer;  
+}
+
+@media screen and (min-width: 0px ) and (max-width: 575px) {    /* Device: Surface duo */
+    .page-not-found {
+        max-width: 75%;    
+    }
+}
+
+@media screen and (min-width: 576px ) and (max-width: 767px) {  /* Device: Surface duo, landscape */
+    .page-not-found {
+        max-width: 55%;    
+    }
+}
+
+@media screen and (min-width: 768px ) and (max-width: 991px) {  /* Device: Ipad Air */
+    .page-not-found {
+        max-width: 45%;    
+    }
+}
+
+@media screen and (min-width: 768px ) and (max-width: 1199px) {  /* Device: Ipad Air */
+    .page-not-found {
+        max-width: 40%;    
+    }
+}
