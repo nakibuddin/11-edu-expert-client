@@ -1,11 +1,14 @@
-import { RouterProvider } from 'react-router-dom';
 import './App.css';
-import my_router from './routes/Routes';
+import { RouterProvider } from 'react-router-dom';
+import { my_router } from './routes/Routes';
+import { ToastContainer } from 'react-toastify';
+
 
 function App() {
     return (
-        <div className="App">
+        <div>
             <RouterProvider router={my_router}></RouterProvider>
+            <ToastContainer/>
         </div>
     );
 }
