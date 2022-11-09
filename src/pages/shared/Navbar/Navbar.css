@@ -1,0 +1,114 @@
+.my_navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;    
+    grid-template-areas: "a b c";    
+
+    /* display: flex;
+    justify-content: space-between; */
+
+    padding: 0px 5% 0px 5% ;
+    background-color: white;
+    box-shadow: 0 0px 18px   #a2a4f8;
+}
+.item_1 {
+    grid-area: a;
+    justify-self: start;  
+}
+.item_2 {
+    grid-area: b;
+    justify-self: center;  
+}
+.item_3 {
+    grid-area: c;
+    justify-self: end;      
+}
+.display_flex {
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+}
+
+.my_navbar img {        
+    margin-left: 8px;
+    margin: 5px 0 7px 8px ;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;    
+    cursor: pointer;       
+}
+.my_navbar img.my_border {    
+    border: 1px solid rgb(192, 191, 191);    
+}
+.displayName {
+    display: none;
+}
+.my_border:hover ~ .displayName {
+    display: block;
+}
+.my_navbar button {    
+    font-weight: bold;  
+    margin-left: 20px;
+    color: #5D5FEF;
+    background-color: white;    
+    border: 1px solid #5D5FEF;
+    border-radius: 10px;
+    padding: 5px 15px 7px 15px ;  
+}
+.my_navbar button:hover {    
+    background-color: #5D5FEF;
+    color: white ;    
+}
+
+
+
+.my_navbar a {
+    text-decoration: none;
+                                /* why margin-left not working if i used %  in raw css*/
+    /* margin-left: 1%; */
+    margin-left: 8px;
+    color: #5D5FEF;    
+    font-weight: bold;  
+    padding: 5px 15px 7px 15px ;  
+}
+.my_navbar .item_1 a {
+    margin-left: 0px;
+    padding: 0px ;  
+}
+.my_navbar a:hover {
+    color: orange;        
+}
+#site_name {    
+    /* font-family: 'Playfair Display', serif; */
+    font-family: 'PT Serif', serif;    
+    color: #0000FE;
+    font-size: 25px;    
+    font-style: italic;
+    font-weight: bolder;
+}
+#site_name:hover {
+    color: #0000FE;
+}
+.active {
+    background-color: #5D5FEF;
+    color: white !important;
+    border-radius: 10px;
+}
+
+
+
+
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+    .my_navbar {
+        display: flex;
+        /* flex-wrap: wrap; */
+        flex-direction: column;
+        justify-content: space-between; 
+        padding-bottom: 5% !important;   
+    }
+
+    .extra_sm{
+        display: flex;
+        flex-direction: column;        
+    }
+}
