@@ -14,10 +14,12 @@ const Navbar = () => {
 
             <div className='item_2 display_flex extra_sm'>                
                     <NavLink to='/'>Home</NavLink>
-                    <NavLink to='/services '>Services </NavLink>              
-                    {/* <NavLink to='/quiz'>Quiz</NavLink>               */}
+                    <NavLink to='/services'>Services </NavLink>
+                    <NavLink to='/my-reviews'>My reviews</NavLink>
+                    <NavLink to='/add-service'>Add service</NavLink>
                     <NavLink to='/blog'>Blog</NavLink>
-                    <NavLink to='/faq'>FAQ</NavLink>              
+                    {/* <NavLink to='/quiz'>Quiz</NavLink> */}
+                    {/* <NavLink to='/faq'>FAQ</NavLink> */}
             </div>
             
             <div className='item_3 display_flex extra_sm'>

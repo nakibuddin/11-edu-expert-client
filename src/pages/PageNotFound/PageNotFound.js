@@ -13,7 +13,7 @@ const PageNotFound = () => {
 
     return (        
         <div className='page-not-found'>
-            <h2>Page not found: 404</h2>
+            <h2 className='text-3xl font-bold'>Page not found: 404</h2>
             <button onClick={goToHome}>Go to Home Page</button>            
         </div>
     );

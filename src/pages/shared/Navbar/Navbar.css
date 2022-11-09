@@ -1,6 +1,7 @@
 .my_navbar {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;    
+    /* grid-template-columns: 1fr 1fr 1fr;     */
+    grid-template-columns: 25% 50% 25%;    
     grid-template-areas: "a b c";    
 
     /* display: flex;
