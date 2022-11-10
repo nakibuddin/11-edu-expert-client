@@ -19,7 +19,7 @@ const AddService = () => {
 
         const service = {name, logo, details, price};
         
-        fetch('http://localhost:5000/services', {
+        fetch('http://localhost:5000/service', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

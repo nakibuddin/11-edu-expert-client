@@ -1,23 +1,64 @@
-.cmnt-container {
-    /* border: 1px solid black !important; */
-    margin-left: 10px;
+.serviceDetails {    
+    margin: 10px 12% 0 12%;    
+    /* padding: 10px;   */
+    /* border: 1px solid black ; */
 }
 
-.cmnt-body {
+.details {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid  #c4c5d8;    
+    border-radius: 10px;    
+    box-shadow: 5px 5px 5px rgb(235, 233, 233);        
+}
+.details img {
+    width: 50%;
+    border-radius: 5px;
+}
+.review-container {
+    
+}
+
+.review-body {
     border: 1px solid  #c4c5d8;
     background-color: #F0F2F5;
     border-radius: 10px;    
 
-    margin: 0px 20px 20px 10px;
+    margin: 0px 20px 20px 6px;
     padding: 10px 10px 15px 15px;
 }
 
-.cmnt-container img {
+.review-container img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
 }
 
-.cmnt-container p {
+.review-container p {
     margin-bottom: 5px;
+}
+
+
+
+
+
+@media screen and (min-width: 0px ) and (max-width: 575px) {    /* Device: Surface duo */
+    .serviceDetails {
+        grid-template-columns: 1fr;
+        margin: 0 5% 0 5%;    
+    }
+}
+
+@media screen and (min-width: 576px ) and (max-width: 767px) {  /* Device: Surface duo, landscape */
+    .serviceDetails {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 5% 0 5%;    
+    }
+}
+
+@media screen and (min-width: 768px ) and (max-width: 991px) {  /* Device: Ipad Air */
+    .serviceDetails {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 6% 0 6%;    
+    }
 }
