@@ -29,7 +29,18 @@ const ServiceDetails = () => {
                 </div>
             </div>        
 
-
+                {/* review section */}
+            {
+                reviews.map(review => 
+                <div className='review-container d-flex' key={review._id}>
+                    <img src={review.photoURL} alt="" />
+                    <div className='review-body'>
+                        <p><b>{review.name}</b></p>
+                        <p>{review.body}</p>
+                    </div>
+                </div>
+                )
+            }
 
         </div>
     );
