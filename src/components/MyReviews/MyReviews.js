@@ -7,7 +7,7 @@ const MyReviews = () => {
     const {user} = useContext(AuthContext)
 
     useEffect(()=> {
-        fetch(`http://localhost:5000/my-reviews/${user.email}`)
+        fetch(`http://localhost:5000/my-reviews/${user?.email}`)
         .then(res => res.json())
         .then(data => setReviews(data))
         .catch(err => console.error('my_fetch_error: ', err));
