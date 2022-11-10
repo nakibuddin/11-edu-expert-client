@@ -18,7 +18,7 @@ const ServiceDetails = () => {
     return (
         <div className='serviceDetails'>
                 {/* service details section */}
-            <h3 className='text-center fw-bold mt-5'>Service Details</h3>                        
+            <h3 className='text-center mt-5'>Details about: <b>{service[0].name}</b> </h3>                        
             <div className='details d-flex gap-4'>                
                 <img src={service[0].logo} alt="imaage not found"/>
                 <div>

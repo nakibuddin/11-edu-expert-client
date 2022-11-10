@@ -9,6 +9,7 @@ import Login from '../components/Login/Login';
 import Services from '../components/services/Services/Services';
 import ServiceDetails from '../components/services/ServiceDetails/ServiceDetails';
 import AddService from '../components/AddService/AddService';
+import MyReviews from '../components/MyReviews/MyReviews';
 
 
 export const my_router = createBrowserRouter([
@@ -32,11 +33,13 @@ export const my_router = createBrowserRouter([
             element: <ServiceDetails></ServiceDetails>
         }, 
 
-        {path: '/register', element: <Register></Register>}, 
-
-        {path: '/login', element: <Login></Login>}, 
+        {path:'/my-reviews', element: <MyReviews></MyReviews>} ,
 
         {path: '/blog', element: <Blog></Blog>},        
+
+        {path: '/register', element: <Register></Register>}, 
+
+        {path: '/login', element: <Login></Login>},         
 
         {path: '*', element: <PageNotFound></PageNotFound>},
 
