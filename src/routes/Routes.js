@@ -8,6 +8,7 @@ import Register from '../components/Register/Register';
 import Login from '../components/Login/Login';
 import Services from '../components/services/Services/Services';
 import ServiceDetails from '../components/services/ServiceDetails/ServiceDetails';
+import AddService from '../components/AddService/AddService';
 
 
 export const my_router = createBrowserRouter([
@@ -22,6 +23,8 @@ export const my_router = createBrowserRouter([
             loader: async () => fetch('http://localhost:5000/services'),
             element: <Services></Services>
         }, 
+
+        {path: '/add-service', element: <AddService></AddService>},
 
         {
             path: '/service/:id',
