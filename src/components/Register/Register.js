@@ -5,12 +5,13 @@ import Registration_img from './../../images/registration.PNG'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/UserContext';
 
 const Register = () => {
     const {createUser, LogInWithGoogle, LogInWithGithub} = useContext(AuthContext);
     const [registerError, setRegisterError] = useState('');
+    const navigate = useNavigate();
 
     const handleRegister = event => {
         event.preventDefault();
@@ -25,7 +26,7 @@ const Register = () => {
         .then(result => {
             console.log(result.user);
             event.target.reset();
-            Navigate('/');
+            navigate('/');
             setRegisterError('');
         })
         .catch(error => {
@@ -62,7 +63,7 @@ const Register = () => {
                             <Form.Control type="text" name="name" placeholder="Name" required/>                    
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formBasicName">
+                        <Form.Group className="mb-3" controlId="formBasicPhotoURL">
                             <Form.Label>Photo URL</Form.Label>
                             <Form.Control type="text" name="photoURL" placeholder="Photo URL" required/>                    
                         </Form.Group>
