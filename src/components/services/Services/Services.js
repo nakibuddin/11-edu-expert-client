@@ -2,9 +2,11 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Service from '../Service/Service';
 import './Services.css'
+import useTitle from './../../../hooks/useTitle';
 
 const Services = () => {
     const services = useLoaderData();    
+    useTitle('Services');
 
     return (
         <div>

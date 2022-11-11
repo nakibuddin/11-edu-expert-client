@@ -5,9 +5,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
+import useTitle from './../../hooks/useTitle';
 
 const AddService = () => {
     const navigate = useNavigate();
+    useTitle('Add-service');
 
     const handleAddService = event => {
         event.preventDefault();

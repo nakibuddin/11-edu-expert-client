@@ -1,9 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Service.css';
+import useTitle from './../../../hooks/useTitle';
 
 const Service = ({service}) => {
     const my_navigate = useNavigate();  
+    useTitle('Service');
 
     const showServiceDetails = () => {                
         my_navigate(`/service/${service._id}`);

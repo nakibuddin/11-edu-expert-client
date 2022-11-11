@@ -3,10 +3,12 @@ import { AuthContext } from '../../context/UserContext';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './MyReviews.css'
+import useTitle from './../../hooks/useTitle';
 
 const MyReviews = () => {
     const [reviews, setReviews] = useState([]);  
     const {user} = useContext(AuthContext)    
+    useTitle('My-reviews');
 
     useEffect(()=> {
         fetch(`https://11-edu-expert-server.vercel.app/my-reviews/${user?.email}`)

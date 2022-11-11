@@ -8,13 +8,13 @@ import Form from 'react-bootstrap/Form';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../context/UserContext';
-
+import useTitle from '../../hooks/useTitle';
 
 
 const Login = () => {
     const {logIn, LogInWithGoogle, LogInWithGithub, setLoading} = useContext(AuthContext);    
     const [loginError, setLoginError] = useState('');
-    
+    useTitle('Login');
 
     const navigate = useNavigate();
     const location = useLocation();

@@ -4,12 +4,14 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/UserContext';
+import useTitle from './../../../hooks/useTitle';
 
 const ServiceDetails = () => {    
     const [reviews, setReviews] = useState([]);
     const service = useLoaderData();    
     const {user} = useContext(AuthContext);
     const navigate = useNavigate();
+    useTitle('Service-details');
 
     useEffect(()=> {
         fetch(`https://11-edu-expert-server.vercel.app/reviews/${service[0]._id}`)
