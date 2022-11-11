@@ -12,13 +12,18 @@ import AddService from '../components/AddService/AddService';
 import MyReviews from '../components/MyReviews/MyReviews';
 import PrivateRoutes from './PrivateRoutes';
 
+// const loadServices = loader: async () => fetch('http://localhost:5000/services'),
 
 export const my_router = createBrowserRouter([
     {path: '/', element: <Main></Main>, children: [
         
-        {path: '/', element: <Home></Home>},     
+        {path: '/',
+        loader: async () => fetch('http://localhost:5000/services/limit'),
+        element: <Home></Home>},     
 
-        {path: '/home', element: <Home></Home>},     
+        {path: '/home',
+        loader: async () => fetch('http://localhost:5000/services/limit'),
+        element: <Home></Home>},     
 
         {
             path: '/services',

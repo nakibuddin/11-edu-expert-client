@@ -12,8 +12,9 @@ const Service = ({service}) => {
     return (
         <div className='service'>
             <img src={service.logo} alt="imaage not found" />
-            <h3>{service.name}</h3>
-            <h6>Details: {1}</h6>
+            <h3>{service.name}</h3>            
+            {/* <h6 className='text-center text-muted fw-normal'> {service.details} {1}</h6> */}
+            <h5>Price: {service.price}</h5>
             <button onClick={showServiceDetails}>Show Details</button>          
         </div>
     );
