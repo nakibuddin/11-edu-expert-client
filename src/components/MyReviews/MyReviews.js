@@ -9,7 +9,7 @@ const MyReviews = () => {
     const {user} = useContext(AuthContext)    
 
     useEffect(()=> {
-        fetch(`http://localhost:5000/my-reviews/${user?.email}`)
+        fetch(`https://11-edu-expert-server.vercel.app/my-reviews/${user?.email}`)
         .then(res => res.json())
         .then(data => setReviews(data))
         .catch(err => console.error('my_fetch_error: ', err));
@@ -20,7 +20,7 @@ const MyReviews = () => {
 
         const agree = window.confirm(`Are you sure you want to delete this review ?`);
         if(agree){
-            fetch(`http://localhost:5000/reviews/${review._id}`, {
+            fetch(`https://11-edu-expert-server.vercel.app/reviews/${review._id}`, {
                 method: 'delete',
             })
             .then(res => res.json())

@@ -12,7 +12,7 @@ const ServiceDetails = () => {
     const navigate = useNavigate();
 
     useEffect(()=> {
-        fetch(`http://localhost:5000/reviews/${service[0]._id}`)
+        fetch(`https://11-edu-expert-server.vercel.app/reviews/${service[0]._id}`)
         .then(res => res.json())
         .then(data => setReviews(data))
         .catch(err => console.error('my_fetch_error: ', err));
@@ -32,7 +32,7 @@ const ServiceDetails = () => {
             body: body
         }                
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://11-edu-expert-server.vercel.app/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

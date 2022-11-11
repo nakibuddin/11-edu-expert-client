@@ -10,9 +10,11 @@ import { useContext, useState } from 'react';
 import { AuthContext } from '../../context/UserContext';
 
 
+
 const Login = () => {
     const {logIn, LogInWithGoogle, LogInWithGithub, setLoading} = useContext(AuthContext);    
     const [loginError, setLoginError] = useState('');
+    
 
     const navigate = useNavigate();
     const location = useLocation();

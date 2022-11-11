@@ -12,22 +12,22 @@ import AddService from '../components/AddService/AddService';
 import MyReviews from '../components/MyReviews/MyReviews';
 import PrivateRoutes from './PrivateRoutes';
 
-// const loadServices = loader: async () => fetch('http://localhost:5000/services'),
+// const loadServices = loader: async () => fetch('https://11-edu-expert-server.vercel.app/services'),
 
 export const my_router = createBrowserRouter([
     {path: '/', element: <Main></Main>, children: [
         
         {path: '/',
-        loader: async () => fetch('http://localhost:5000/services/limit'),
+        loader: async () => fetch('https://11-edu-expert-server.vercel.app/services/limit'),
         element: <Home></Home>},     
 
         {path: '/home',
-        loader: async () => fetch('http://localhost:5000/services/limit'),
+        loader: async () => fetch('https://11-edu-expert-server.vercel.app/services/limit'),
         element: <Home></Home>},     
 
         {
             path: '/services',
-            loader: async () => fetch('http://localhost:5000/services'),
+            loader: async () => fetch('https://11-edu-expert-server.vercel.app/services'),
             element: <Services></Services>
         }, 
 
@@ -35,13 +35,13 @@ export const my_router = createBrowserRouter([
 
         {
             path: '/service/:id',
-            loader: async ({params}) => fetch(`http://localhost:5000/service/${params.id}`),
+            loader: async ({params}) => fetch(`https://11-edu-expert-server.vercel.app/service/${params.id}`),
             element: <ServiceDetails></ServiceDetails>
         },
         
         {
             path:'/my-reviews',
-            // loader: async () => fetch(`http://localhost:5000/my-reviews/${user?.email}`),
+            // loader: async () => fetch(`https://11-edu-expert-server.vercel.app/my-reviews/${user?.email}`),
             element: <PrivateRoutes><MyReviews></MyReviews></PrivateRoutes>
         } ,
 
