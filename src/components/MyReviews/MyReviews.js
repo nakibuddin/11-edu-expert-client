@@ -36,13 +36,13 @@ const MyReviews = () => {
     }
 
     return (
-        <div>            
+        <div className='my-reviews-container'>            
             {
                 reviews.map(review => 
-                <div className='review-container d-flex' key={review._id}>
+                <div className=' d-flex' key={review._id}>
                     <img src={review.photoURL} alt="" />
-                    <div className='review-body'>
-                        <p><b>{review.name}</b></p>
+                    <div className='review-body'>                        
+                        <p><b>Service name: {review?.service_name}</b></p>
                         <p>{review.body}</p>
 
                         <div className='text-center'>

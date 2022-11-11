@@ -30,11 +30,9 @@ const AddService = () => {
         .then(data => {
             // console.log(data);
             if(data.acknowledged){
-                alert('User added successfully');
-                // toast("User added successfully");
+                toast('Service added successfully.', {position: toast.POSITION.TOP_CENTER});
                 navigate('/services');
-                // event.target.reset();
-                // setUser({});
+                // event.target.reset();                
             }
         })
         .catch(error => console.error('my_fetch_error: ', error));

@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './ServiceDetails.css'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../../context/UserContext';
 
 const ServiceDetails = () => {    
     const [reviews, setReviews] = useState([]);
-    const service = useLoaderData();
+    const service = useLoaderData();    
+    const {user} = useContext(AuthContext);
 
     useEffect(()=> {
         fetch(`http://localhost:5000/reviews/${service[0]._id}`)
@@ -14,6 +18,42 @@ const ServiceDetails = () => {
 
     } ,[])
     // console.log(reviews);
+
+    const handleSubmit = event => {
+        event.preventDefault(); 
+        const body = event.target.review.value;
+        const review = {
+            service_id: service[0]._id,
+            service_name: service[0].name,
+            email: user.email,
+            name: user.displayName,
+            photoURL: user.photoURL,
+            body: body
+        }                
+
+        fetch('http://localhost:5000/review', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },            
+            body: JSON.stringify(review),
+        })
+        .then(res => res.json())
+        .then(data => {            
+            if(data.acknowledged){
+                // alert('Review added successfully');
+                toast('Review added successfully.', {position: toast.POSITION.TOP_CENTER});                                                         
+                event.target.reset();
+                const remainingReviews = [...reviews, review];
+                setReviews(remainingReviews);
+                // setUser({});
+            }
+        })
+        .catch(error => console.error('my_fetch_error: ', error));
+        // event.target.reset();    
+        
+        
+    }
 
     return (
         <div className='serviceDetails'>
@@ -29,18 +69,29 @@ const ServiceDetails = () => {
                 </div>
             </div>        
 
-                {/* review section */}
-            {
-                reviews.map(review => 
-                <div className='review-container d-flex' key={review._id}>
-                    <img src={review.photoURL} alt="" />
-                    <div className='review-body'>
-                        <p><b>{review.name}</b></p>
-                        <p>{review.body}</p>
+                {/* review section */}            
+           <div className='review-container'>
+                <h3 className='text-center'><b>Service Review</b> </h3>    
+                <p className='text-center mb-3 fs-6'>(Total reviews: {reviews.length})</p>
+
+                <form onSubmit={handleSubmit} className='d-flex align-items-center'>                    
+                    {/* <textarea  className='my-text-area' defaultValue={''} name="review" id="" cols="80" rows="2" placeholder='Add a review' required> </textarea> */}
+                    <input className='my-text-area' type="text" name="review" id="" placeholder='Add a review' required />
+                    <button className="btn btn-outline-primary btn-sm px-4" type="submit"> Submit </button>
+                </form>  
+
+                {
+                    reviews.map(review => 
+                    <div className='d-flex' key={review._id}>
+                        <img src={review.photoURL} alt="" />
+                        <div className='review-body'>
+                            <p><b>{review.name}</b></p>
+                            <p>{review.body}</p>
+                        </div>
                     </div>
-                </div>
-                )
-            }
+                    )
+                }
+           </div>
 
         </div>
     );

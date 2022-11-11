@@ -1,1 +1,18 @@
 
+.my-reviews-container {        
+    margin: 50px 12% 30px 12%;  
+    padding: 30px 10px 0 10px;
+    border: 1px solid  #c4c5d8;    
+    border-radius: 10px;    
+    box-shadow: 5px 5px 5px rgb(235, 233, 233);   
+}
+
+.my-reviews-container img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.my-reviews-container p {
+    margin-bottom: 5px;
+}
