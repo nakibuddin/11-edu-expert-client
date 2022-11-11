@@ -38,22 +38,36 @@ const MyReviews = () => {
     }
 
     return (
-        <div className='my-reviews-container'>            
+        
+        <div>            
             {
-                reviews.map(review => 
-                <div className=' d-flex' key={review._id}>
-                    <img src={review.photoURL} alt="" />
-                    <div className='review-body'>                        
-                        <p><b>Service name: {review?.service_name}</b></p>
-                        <p>{review.body}</p>
+                reviews?.length !== 0 ?
+                
+                <div className='my-reviews-container'>            
+                    {
+                        reviews.map(review => 
+                        <div className=' d-flex' key={review._id}>
+                            <img src={review.photoURL} alt="" />
+                            <div className='review-body'>                        
+                                <p><b>Service name: {review?.service_name}</b></p>
+                                <p>{review.body}</p>
 
-                        <div className='text-center'>
-                            <button onClick={() => handleDelete(review)} className="btn btn-outline-primary btn-sm px-4" type="submit"> Edit </button>                              
-                            <button onClick={() => handleDelete(review)} className="btn btn-outline-danger btn-sm ms-4 px-3" type="submit"> Delete </button>                             
+                                <div className='text-center'>
+                                    <button onClick={() => handleDelete(review)} className="btn btn-outline-primary btn-sm px-4" type="submit"> Edit </button>                              
+                                    <button onClick={() => handleDelete(review)} className="btn btn-outline-danger btn-sm ms-4 px-3" type="submit"> Delete </button>                             
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        )
+                    }
                 </div>
-                )
+                :
+                <div className='page-not-found'>
+                    <h2>No reviews were added</h2>
+                    {/* <button>Go to Home Page</button>             */}
+                </div>
+
+
             }
         </div>
     );
