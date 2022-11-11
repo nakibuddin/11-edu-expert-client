@@ -28,12 +28,17 @@
     align-items: center;
 }
 
+.navbar_user_photo {     
+    border-radius: 50%;   
+}
+
+
 .my_navbar img {        
     margin-left: 8px;
     margin: 5px 0 7px 8px ;
     width: 40px;
     height: 40px;
-    border-radius: 50%;    
+    /* border-radius: 50%;     */
     cursor: pointer;       
 }
 .my_navbar img.my_border {    
@@ -48,15 +53,25 @@
 .my_navbar button {    
     font-weight: bold;  
     margin-left: 20px;
+    color: black;
+    background-color: white;    
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px 15px 7px 15px ;  
+}
+/* .my_navbar button {    
+    font-weight: bold;  
+    margin-left: 20px;
     color: #5D5FEF;
     background-color: white;    
     border: 1px solid #5D5FEF;
     border-radius: 10px;
     padding: 5px 15px 7px 15px ;  
-}
+} */
 .my_navbar button:hover {    
     background-color: #5D5FEF;
     color: white ;    
+    border: 1px solid #5D5FEF;
 }
 
 
@@ -81,10 +96,12 @@
 #site_name {    
     /* font-family: 'Playfair Display', serif; */
     font-family: 'PT Serif', serif;    
-    color: #0000FE;
+    /* color: #0000FE; */
+    color: black;
     font-size: 25px;    
     font-style: italic;
     font-weight: bolder;
+    margin-left: 10px;
 }
 #site_name:hover {
     color: #0000FE;

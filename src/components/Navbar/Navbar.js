@@ -48,8 +48,8 @@ const Navbar = () => {
                     {
                         user?.uid && 
                         <>                                                                 
-                            <img onClick={showProfile} className='my_border' src={user?.photoURL} alt="" />                                              
-                            <span className='displayName'>{user?.displayName}</span>  
+                            <img onClick={showProfile} className='my_border navbar_user_photo' src={user?.photoURL} alt="" />                                              
+                            <span className='displayName'><b>{user?.displayName}</b></span>  
                         </>                      
                     }
                 </div>
