@@ -2,13 +2,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import './ServiceDetails.css'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/UserContext';
 
 const ServiceDetails = () => {    
     const [reviews, setReviews] = useState([]);
     const service = useLoaderData();    
     const {user} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     useEffect(()=> {
         fetch(`http://localhost:5000/reviews/${service[0]._id}`)
@@ -50,9 +51,10 @@ const ServiceDetails = () => {
             }
         })
         .catch(error => console.error('my_fetch_error: ', error));
-        // event.target.reset();    
-        
-        
+    }
+
+    const goToLogIn = () => {
+        navigate('/login');
     }
 
     return (
@@ -72,13 +74,23 @@ const ServiceDetails = () => {
                 {/* review section */}            
            <div className='review-container'>
                 <h3 className='text-center'><b>Service Review</b> </h3>    
-                <p className='text-center mb-3 fs-6'>(Total reviews: {reviews.length})</p>
+                <p className='text-center mb-3 fs-6'>(Total reviews: {reviews.length})</p>                 
 
-                <form onSubmit={handleSubmit} className='d-flex align-items-center'>                    
-                    {/* <textarea  className='my-text-area' defaultValue={''} name="review" id="" cols="80" rows="2" placeholder='Add a review' required> </textarea> */}
-                    <input className='my-text-area' type="text" name="review" id="" placeholder='Add a review' required />
-                    <button className="btn btn-outline-primary btn-sm px-4" type="submit"> Submit </button>
-                </form>  
+                {
+                    user?.uid ? 
+
+                    <form onSubmit={handleSubmit} className='d-flex align-items-center'>                    
+                        {/* <textarea  className='my-text-area' defaultValue={''} name="review" id="" cols="80" rows="2" placeholder='Add a review' required> </textarea> */}
+                        <input className='my-text-area' type="text" name="review" id="" placeholder='Add a review' required />
+                        <button className="btn btn-outline-primary btn-sm px-4" type="submit"> Submit </button>
+                    </form>                    
+                    :
+                    <div>
+                        <p className='text-center mb-4 mt-4'>
+                            <button onClick={goToLogIn} className="btn btn-outline-primary px-4"> Log in to add a review </button>
+                        </p>
+                    </div>
+                }
 
                 {
                     reviews.map(review => 
