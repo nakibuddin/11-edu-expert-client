@@ -32,9 +32,13 @@ export const my_router = createBrowserRouter([
             path: '/service/:id',
             loader: async ({params}) => fetch(`http://localhost:5000/service/${params.id}`),
             element: <ServiceDetails></ServiceDetails>
-        }, 
-
-        {path:'/my-reviews', element: <PrivateRoutes><MyReviews></MyReviews></PrivateRoutes>} ,
+        },
+        
+        {
+            path:'/my-reviews',
+            // loader: async () => fetch(`http://localhost:5000/my-reviews/${user?.email}`),
+            element: <PrivateRoutes><MyReviews></MyReviews></PrivateRoutes>
+        } ,
 
         {path: '/blog', element: <Blog></Blog>},        
 
