@@ -1,0 +1,18 @@
+.bg_mycolor{
+    background-color: #289BDE;
+}
+
+/* our partner section image height handling */
+.my_height{
+    height: 26px;
+}        
+@media screen and (max-width: 767px) {
+    /* footer section margin padding handling */
+    .my_footer_none{
+        display: none;
+    }
+    .my_footer_hidden{
+        display: block !important;
+        visibility: hidden;
+    }
+}       

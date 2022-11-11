@@ -1,7 +1,6 @@
 import React from 'react';
 import './Home.css';
 import MyCarousel from './../MyCarousel/MyCarousel';
-import Footer from './../Footer/Footer';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import Service from '../services/Service/Service';
 import useTitle from './../../hooks/useTitle';
@@ -29,7 +28,7 @@ const Home = () => {
             </p>
 
 
-            {/* <Footer></Footer> */}
+            
             {/* <MyCarousel></MyCarousel> */}
 
         </div>
