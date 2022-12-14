@@ -18,7 +18,7 @@ const Home = () => {
         <div>        
 
             <header>            
-                <h1 class="header_section_header text-center"> <br/> <br/>Education is the back bone of a nation</h1> 
+                <h1 class="header_section_header text-center"> <br/> <br/>Education is the backbone of a nation.</h1> 
                 {/* <h4 class="h4_header_section"> Any donation does make a difference. Getting involved is what makes <br/> Children in Need so moving </h4>         */}
             </header>
             

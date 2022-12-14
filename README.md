@@ -1,4 +1,4 @@
-# Project Name: Edu Station
+# Project Name: Edu Expert
 
 Live site link: [https://edu-expert-fafad.web.app/](https://edu-expert-fafad.web.app/).
 
